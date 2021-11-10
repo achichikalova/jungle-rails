@@ -1,2 +1,37 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Store Status</h1>
+
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">&num;</th>
+      <th scope="col">Categories</th>
+      <th class="text-center" scope="col">Number of Products in Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td scope="row">1</td>
+      <td>Apparel</td>
+      <td class="text-center"><a href="categories/1"><%= @apparel_count %></a></td>
+    </tr>
+    <tr>
+      <td scope="row">2</td>
+      <td>Electronics</td>
+      <td class="text-center"><a href="categories/2"><%= @electronic_count %></a></td>
+    </tr>
+    <tr>
+      <td scope="row">3</td>
+      <td>Furniture</td>
+      <td class="text-center"><a href="categories/3"><%= @furniture_count %></a></td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <th class="text-uppercase">Total number of products</th>
+      <th></th>
+      <td class="font-weight-bold text-center"><a href="/admin/products"><%= @product_count %></a></td>
+    </tr>
+  </tfoot>
+</table> 
