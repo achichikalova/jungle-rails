@@ -4,8 +4,10 @@
     <h1>My Cart</h1>
   </header>
   <% if enhanced_cart.empty? %>
-  <h2>Your Jungle cart is empty.</h2>
-  <a href="/">Continue shopping.</a>
+  <div class="alert alert-info" role="alert">
+    <h2>Your Jungle cart is empty.</h2>
+    <a href="#" class="alert-link">Continue shopping.</a>
+  </div>
   <%  else  %>
     <div class="panel panel-default items">
       <table class="table table-bordered">
