@@ -19,6 +19,15 @@ Rails.application.routes.draw do
     resources :categories
   end
 
+  # these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  
+  # these routes are for showing users a sign up link, redirect to create new user page and signing them up.
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
