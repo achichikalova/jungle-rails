@@ -23,18 +23,22 @@ RSpec.describe Product, type: :model do
       subject.name = nil
       expect(subject.errors.full_messages)
     end
+
     it 'should fail if no price' do
       subject.price = nil
       expect(subject.errors.full_messages)
     end
+
     it 'should fail if no quantity' do
       subject.quantity = nil
       expect(subject.errors.full_messages)
     end
+
     it 'should fail if no category' do
       subject.category = nil
       expect(subject.errors.full_messages)
     end
+    
   end
   
 end
