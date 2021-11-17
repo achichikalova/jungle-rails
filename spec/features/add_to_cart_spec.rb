@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor click one of the product partials and get to new page", type: :feature, js: true do
+RSpec.feature "Add to cart", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -15,18 +15,19 @@ RSpec.feature "Visitor click one of the product partials and get to new page", t
     )
   end
 
-  scenario "They see all products" do
-    # ACT
-    visit root_path
+scenario "They see all products" do
+  # ACT
+  visit root_path
 
-    # VERIFY
-    find('a.btn-default').click
+  expect(page).to have_content('My Cart (0)')
 
-    expect(page).to have_content('Description')
+  # VERIFY
+  click_button('Add')
 
-    # DEBUG
-    save_screenshot
+  expect(page).to have_content('My Cart (1)')
 
-  end
+  # DEBUG
+  save_screenshot
 
-end 
+end
+end
